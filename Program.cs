@@ -1,6 +1,8 @@
 ﻿using System.Reflection;
 
-class Program
+namespace AdventOfCode2023;
+
+static class Program
 {
     static void Main()
     {
@@ -8,11 +10,11 @@ class Program
         Console.WriteLine("Please enter a string in the following format: \"Day.Part.Input/Sample\"");
         Console.WriteLine("Examples: \"3.1.i\", \"5.2.s\"");
         
-        string selection = Console.ReadLine();
-        var selectionParts = selection.Split('.');
-        var day = selectionParts[0];
-        var part = selectionParts[1];
-        var inputType = selectionParts[2];
+        string? selection = Console.ReadLine();
+        var selectionParts = selection?.Split('.');
+        var day = selectionParts?[0];
+        var part = selectionParts?[1];
+        var inputType = selectionParts?[2];
 
         string className = $"AdventOfCode2023.Day{day}.Part{part}";
         Type? type = Type.GetType(className);
@@ -44,4 +46,3 @@ class Program
         }
     }
 }
-

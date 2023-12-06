@@ -37,8 +37,6 @@ internal static class Part1
             scorecardTotal += lineTotal;
         }
         
-        // 51687
-        
         Console.WriteLine(scorecardTotal);
     }
 }

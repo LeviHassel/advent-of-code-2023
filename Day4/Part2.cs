@@ -59,7 +59,5 @@ internal static class Part2
         }
         
         Console.WriteLine(scratchcardTotal);
-        
-        // 11827296: correct
     }
 }

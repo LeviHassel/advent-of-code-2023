@@ -5,12 +5,6 @@ internal static class Part1
 {
     public static void Run(string[] lines)
     {
-        // cube can be red, blue or green
-        
-        // which games would have been possible if the bag contained only 12 red cubes, 13 green cubes, and 14 blue cubes?
-        
-        // Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
-
         var maxRedCount = 12;
         var maxGreenCount = 13;
         var maxBlueCount = 14;
@@ -75,6 +69,5 @@ internal static class Part1
             
             Console.WriteLine(possibleGameIdSum);
         }
-        
     }
 }

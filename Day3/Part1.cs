@@ -49,8 +49,6 @@ internal static class Part1
         var validPartNumbers = partNumbers.Where(pn => pn.IsActualPartNumber).ToList();
         int totalSum = validPartNumbers.Sum(vpn => vpn.Value);
         Console.WriteLine(totalSum);
-        
-        // last time: 543410
     }
 
     public static List<PartNumber> FindPartNumbersForRow(string row, int rowNumber)

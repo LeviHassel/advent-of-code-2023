@@ -1,6 +1,7 @@
 ﻿namespace AdventOfCode2023.Day4;
 
-// ReSharper disable once UnusedType.Global
+// https://adventofcode.com/2023/day/4
+
 internal static class Part2
 {
     public static void Run(string[] lines)

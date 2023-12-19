@@ -15,7 +15,6 @@ internal static class Part1
             var contents = line.Split(' ');
             var direction = GetDirection(contents[0]);
             var meters = int.Parse(contents[1]);
-            var color = contents[2].ToCharArray()[2..7];
 
             var digTrenchResponse = DigTrench(direction, meters, currentLocation.Item1, currentLocation.Item2);
             var trenchLine = digTrenchResponse.Item1;
@@ -28,12 +27,12 @@ internal static class Part1
         
         // Handle if the trench crosses over itself (like first and last entry)
         var distinctTrenchTiles = trenchBorderTiles.DistinctBy(t => new Tuple<int, int>(t.Item1, t.Item2)).ToList();
-
+        
         var lavaTileCount = distinctTrenchTiles.Count + filledTiles.Count;
         
         PrintTrench(trenchBorderTiles, filledTiles);
         
-        Console.WriteLine($"Cubic meters of lava trench can hold: {lavaTileCount}");
+        Console.WriteLine($"Cubic meters of lava that trench can hold: {lavaTileCount}");
     }
 
     public static (HashSet<(int, int)>, Tuple<int, int>) DigTrench(Direction direction, int meters, int startingX, int startingY)

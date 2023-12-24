@@ -13,14 +13,14 @@ internal static class Part1
         
         var plotQueue = new Queue<(int, int, int)>();
         var plotsAtEnd = new HashSet<(int, int)>();
-        var exploredTilesForStep = new HashSet<(int, int, int)>();
+        var exploredPlotsForStep = new HashSet<(int, int, int)>();
         
         plotQueue.Enqueue((startingX, startingY, 0));
 
         while (plotQueue.Any())
         {
             var plot = plotQueue.Dequeue();
-            exploredTilesForStep.Add((plot.Item1, plot.Item2, plot.Item3));
+            exploredPlotsForStep.Add((plot.Item1, plot.Item2, plot.Item3));
             
             Console.WriteLine($"Steps: {plot.Item3}, Plot exploring queue: {plotQueue.Count}, Current plot: ({plot.Item1}, {plot.Item2})");
             
@@ -37,25 +37,25 @@ internal static class Part1
                 if (newStepCount <= stepsToTake)
                 {
                     // Enqueue left plot
-                    if (!plotQueue.Contains((leftX, currentY, newStepCount)) && !exploredTilesForStep.Contains((leftX, currentY, newStepCount)))
+                    if (!plotQueue.Contains((leftX, currentY, newStepCount)) && !exploredPlotsForStep.Contains((leftX, currentY, newStepCount)))
                     {
                         plotQueue.Enqueue((leftX, currentY, newStepCount));
                     }
 
                     // Enqueue right plot
-                    if (!plotQueue.Contains((rightX, currentY, newStepCount)) && !exploredTilesForStep.Contains((rightX, currentY, newStepCount)))
+                    if (!plotQueue.Contains((rightX, currentY, newStepCount)) && !exploredPlotsForStep.Contains((rightX, currentY, newStepCount)))
                     {
                         plotQueue.Enqueue((rightX, currentY, newStepCount));
                     }
 
                     // Enqueue up plot
-                    if (!plotQueue.Contains((currentX, upY, newStepCount)) && !exploredTilesForStep.Contains((currentX, upY, newStepCount)))
+                    if (!plotQueue.Contains((currentX, upY, newStepCount)) && !exploredPlotsForStep.Contains((currentX, upY, newStepCount)))
                     {
                         plotQueue.Enqueue((currentX, upY, newStepCount));
                     }
 
                     // Enqueue down plot
-                    if (!plotQueue.Contains((currentX, downY, newStepCount)) && !exploredTilesForStep.Contains((currentX, downY, newStepCount)))
+                    if (!plotQueue.Contains((currentX, downY, newStepCount)) && !exploredPlotsForStep.Contains((currentX, downY, newStepCount)))
                     {
                         plotQueue.Enqueue((currentX, downY, newStepCount));
                     }
